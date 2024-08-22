@@ -2,11 +2,11 @@
 
 import { Description } from "@radix-ui/react-dialog";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNode, FaAngular, FaTypo3, FaBootstrap, FaCss3Alt, FaReacteurope, FaBox, FaGithub, FaGit, FaDatabase, FaAd } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiTypescript, SiRedux, SiApifox, SiPostman, SiMysql, SiMongodb } from "react-icons/si";
 
 const about = {
   title: "About Me",
-  description: `Hello! I'm Shubham Shinde, a passionate and dedicated software developer with over 1.8+ years of experience in front-end and full stack development. My journey in the tech world has allowed me to craft seamless, robust, and scalable web applications that provide users with intuitive and engaging digital experiences. ${<br></br>} With a strong foundation in ReactJS, NextJS, Angular, HTML5, CSS3. I specialize in building dynamic user interfaces and integrating them with powerful back-end systems. My expertise extends to creating responsive, high-performance applications that meet modern web standards and exceed client expectations.`,
+  description: `Hello! I'm Shubham Shinde, a passionate and dedicated software developer with over 1.8+ years of experience in front-end and full stack development. My journey in the tech world has allowed me to craft seamless, robust, and scalable web applications that provide users with intuitive and engaging digital experiences. With a strong foundation in ReactJS, NextJS, Angular, HTML5, CSS3. I specialize in building dynamic user interfaces and integrating them with powerful back-end systems. My expertise extends to creating responsive, high-performance applications that meet modern web standards and exceed client expectations.`,
   info: [
     {
       fieldName: "Name",
@@ -64,15 +64,16 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
+  description: "My educational background has provided me with a strong foundation in computer science and information technology. where I developed a solid understanding of core computer science principles.",
   items: [
     {
       institution: "JSPM'S Jayawant Institute Of Management Studies, Pune",
-      degree: "Master Of Computer Application",
+      degree: "MCA",
       duration: "2023",
     },
     {
       institution: "Yashwantrao Chavan Institute Of Science, Satara",
-      degree: "B.Sc ( Computer Science )",
+      degree: "B.Sc(Computer Science)",
       duration: "2020",
     },
     {
@@ -85,7 +86,7 @@ const education = {
 
 const skills = {
   title: "My Skills",
-  description: "",
+  description: "I possess a comprehensive skill set that spans Frontend development, with a strong foundation in modern web technologies. My expertise includes creating responsive and interactive user interfaces using HTML5, CSS3, and JavaScript, along with advanced styling frameworks like Bootstrap and Tailwind CSS. I am proficient in building dynamic and scalable web applications using ReactJS and Angular, and I have hands-on experience with state management tools such as React-Redux.",
   skillset: [
     {
       icon: <FaHtml5 />,
@@ -100,7 +101,7 @@ const skills = {
       name: "BootStrap",
     },
     {
-      icon: <FaCss3Alt />,
+      icon: <SiTailwindcss />,
       name: "Tailwind CSS",
     },
     {
@@ -108,7 +109,7 @@ const skills = {
       name: "JavaScript",
     },
     {
-      icon: <FaTypo3 />,
+      icon: <SiTypescript />,
       name: "TypeScript",
     },
     {
@@ -116,19 +117,23 @@ const skills = {
       name: "ReactJS",
     },
     {
+      icon: <SiNextdotjs />,
+      name: "NextJS",
+    },
+    {
       icon: <FaAngular />,
       name: "Angular",
     },
     {
-      icon: <FaReacteurope />,
+      icon: <SiRedux />,
       name: "React-Redux",
     },
     {
-      icon: <FaAd />,
+      icon: <SiApifox />,
       name: "API",
     },
     {
-      icon: <FaBox />,
+      icon: <SiPostman />,
       name: "PostMan",
     },
     {
@@ -140,11 +145,11 @@ const skills = {
       name: "Node JS",
     },
     {
-      icon: <FaDatabase />,
+      icon: <SiMysql />,
       name: "MySQL",
     },
     {
-      icon: <FaDatabase />,
+      icon: <SiMongodb />,
       name: "MongoDB",
     },
   ]
@@ -156,6 +161,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 import { motion } from "framer-motion";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { Link } from "lucide-react";
 
 const Resume = () => {
   return (
@@ -186,7 +192,7 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index)=> {
+                    {experience.items.map((item, index) => {
                       return (
                         <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                           <span className="text-accent">{item.duration}</span>
@@ -202,20 +208,21 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+
             <TabsContent value="education" className="w-full">
-            <div className="flex flex-col gap-[30px] text-center xl:text-left">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                {/* <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p> */}
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {education.items.map((item, index)=> {
+                    {education.items.map((item, index) => {
                       return (
-                        <li key={index} className="bg-[#232329] h-[250px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[100px] text-center lg:text-left">{item.institution}</h3>
+                          <h3 className="text-xl max-w-[260px] min-h-[40px] text-center lg:text-left">{item.degree}</h3>
                           <div className="flex items-center gap-3">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.degree}</p>
+                            <p className="text-white/60">{item.institution}</p>
                           </div>
                         </li>
                       )
@@ -224,11 +231,55 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-            <TabsContent value="skills" className="w-full">
-              Skills
+
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+                </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.skillset.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider duration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              About Me
+
+            <TabsContent value="about" className="w-full h-full">
+              <div className="flex flex-col gap-[30px] ">
+                <div className="flex flex-col text-center gap-[30px] xl:text-left">
+                  <h3 className="text-4xl font-bold">{about.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                  <ul className="grid grid-cols-1 xl:grid-cols-2">
+                    {about.info.map((item, index) => {
+                      return (
+                        <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                          <span className="text-white/60">{item.fieldName}</span>
+                          {item.fieldValue.includes("http") ? (<a className="text-xl" href={item.fieldValue} target="_blank" rel="link"> 🔗 </a>) : (<span className="text-xl">{item.fieldValue}</span> )}
+                        </li>
+                      )
+
+                    })}
+                  </ul>
+                </div>
+              </div>
             </TabsContent>
 
           </div>
