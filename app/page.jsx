@@ -1,3 +1,5 @@
+"use client";
+
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stars from "@/components/Stars";
@@ -5,6 +7,15 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi"
 
 const Home = () => {
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/resume/ShubhamShinde__Resume.pdf';
+    link.download = 'ShubhamShinde__Resume.pdf';
+    link.click(); 
+  };
+
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -17,7 +28,9 @@ const Home = () => {
               Crafting Seamless, Robust, and Scalable Web Applications with Expertise in Front-End, Full Stack Development, and Cutting-Edge Technologies.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+              <Button 
+              onClick={handleDownload}
+              download variant="outline" size="lg" className="uppercase flex items-center gap-2">
                 <span>Download Resume</span>
                 <FiDownload className="text-xl"/>
               </Button>
